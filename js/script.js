@@ -48,42 +48,56 @@ const titleClickHandler = function (event) {
 
 }
 
-const links = document.querySelectorAll('.titles a');
-
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
-
-
-  const optArticleSelector = '.post',
+const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
 
-function generateTitleLinks(){
+function generateTitleLinks() {
 
-  /* remove contents of titleList */
+  /* [DONE] remove contents of titleList */
 
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
 
-  /* for each article */
+  /* [DONE] for each article */
 
-  const articles = document.queryArticleSelector(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log('optArticleSelector', optArticleSelector)
+
+  let html = '';
 
   for (let article of articles) {
 
-  }
+    /* [DONE] get the article id */
 
-    /* get the article id */
+    const articleId = article.getAttribute('id');
 
-    /* find the title element */
+    /* [DONE] find the title element */
+
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* get the title from the title element */
 
-    /* create HTML of the link */
+    /* [DONE] create HTML of the link */
+
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    //console.log (linkHTML)
 
     /* insert link into titleList */
 
+    /* [DONE] insert link into html variable */
+    html = html + linkHTML;
+    // console.log(html)
+  }
+
+  titleList.innerHTML = html;
+
+  const links = document.querySelectorAll('.titles a');
+  console.log(links)
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTitleLinks();
