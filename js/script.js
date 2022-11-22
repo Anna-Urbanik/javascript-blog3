@@ -10,7 +10,7 @@ const titleClickHandler = function (event) {
   const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
-  
+
   /* [DONE] remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
@@ -51,7 +51,7 @@ const titleClickHandler = function (event) {
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector ='.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list';
 
 
 function generateTitleLinks() {
@@ -89,7 +89,7 @@ function generateTitleLinks() {
 
     /* [DONE] insert link into html variable */
     html = html + linkHTML;
-    // console.log(html)
+
   }
 
   titleList.innerHTML = html;
@@ -107,7 +107,7 @@ generateTitleLinks();
 /* Tags */
 
 
-function generateTags(){
+function generateTags() {
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   console.log('optArticleSelector', optArticleSelector);
@@ -125,22 +125,22 @@ function generateTags(){
     const articleTagsArray = articleTags.split(' ');
     console.log(articleTagsArray)
     /* START LOOP: for each tag */
-    for(let tag of articleTagsArray){
+    for (let tag of articleTagsArray) {
       console.log('tag', tag)
       /* generate HTML of the link */
       const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
       /* add generated code to html variable */
       html = html + linkHTML;
-    /* END LOOP: for each tag */
+      /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
     /* ??? */
-  /* END LOOP: for every article: */
-}
+    /* END LOOP: for every article: */
+  }
 }
 generateTags();
 
-function tagClickHandler(event){
+function tagClickHandler(event) {
   /* prevent default action for this event */
 
   /* make new constant named "clickedElement" and give it the value of "this" */
@@ -153,7 +153,7 @@ function tagClickHandler(event){
 
   /* START LOOP: for each active tag link */
 
-    /* remove class active */
+  /* remove class active */
 
   /* END LOOP: for each active tag link */
 
@@ -161,19 +161,19 @@ function tagClickHandler(event){
 
   /* START LOOP: for each found tag link */
 
-    /* add class active */
+  /* add class active */
 
   /* END LOOP: for each found tag link */
 
   /* execute function "generateTitleLinks" with article selector as argument */
 }
 
-function addClickListenersToTags(){
+function addClickListenersToTags() {
   /* find all links to tags */
 
   /* START LOOP: for each link */
 
-    /* add tagClickHandler as event listener for that link */
+  /* add tagClickHandler as event listener for that link */
 
   /* END LOOP: for each link */
 }
