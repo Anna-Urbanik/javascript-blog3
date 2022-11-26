@@ -118,3 +118,44 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+/* Tags */
+
+.tags li {
+  display:inline-block;
+}
+
+.tag-size1 {
+  font-size: 15px;
+  color:darkorange;
+  text-decoration: none;
+  margin: 0 15px 10px 5px;
+}
+
+.tag-size2 {
+  font-size: 18px;
+  color:blue;
+  text-decoration: none;
+  margin: 0 15px 10px 5px;
+}
+
+.tag-size3 {
+  font-size: 20px;
+  color:magenta;
+  text-decoration: none;
+  margin: 0 15px 10px 5px;
+}
+
+.tag-size4 {
+  font-size: 22px;
+  color:darkcyan;
+  text-decoration: none;
+  margin: 0 15px 10px 5px;
+}
+
+.tag-size5 {
+  font-size: 25px;
+  color:green;
+  text-decoration: none;
+  margin: 0 15px 10px 5px;
+}
