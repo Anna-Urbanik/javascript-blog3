@@ -99,6 +99,10 @@ body {
   }
 }
 
+.sidebar-author {
+  text-decoration: none;
+}
+
 /* Post */
 
 .post {
@@ -148,7 +152,7 @@ body {
 
 .tag-size4 {
   font-size: 22px;
-  color:darkcyan;
+  color:red;
   text-decoration: none;
   margin: 0 15px 10px 5px;
 }
