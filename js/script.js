@@ -77,6 +77,23 @@ generateTitleLinks();
 
 /* Tags */
 
+function calculateTagsParams (tags){
+  //Math.min(a, b, c);
+  //Math.max(a, b, c);
+  const params = { max: '0', min: '999999' };
+  
+  for( let tag in tags ){
+    console.log(tag + ' is used ' + tags[tag] + ' times');
+  
+  if(tags[tag] > params.max){
+    params.max = tags[tag];
+  } else if (tags[tag] < params.min) {
+    params.min = tags[tag];
+  }
+  }
+  return params;
+};
+
 function generateTags() {
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
@@ -118,15 +135,17 @@ function generateTags() {
   }
     /* [NEW] find list of tags in right column */
     const tagList = document.querySelector(optTagsListSelector);
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams:', tagsParams)
     /* [NEW] create variable for all links HTML code */
     let allTagsHTML = '';
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
     /* [NEW] generate code of a link and add it to allTagsHTML */
-      allTagsHTML += tag + ' (' + allTags[tag] + ') ';
-      // tagLinkHTML???  '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+     allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+      // const tagLinkHTML =  '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      /* [NEW] END LOOP: for each tag in allTags: */
     }
-    /* [NEW] END LOOP: for each tag in allTags: */
     /*[NEW] add HTML from allTagsHTML to tagList */
     tagList.innerHTML = allTagsHTML;
   }
