@@ -139,7 +139,7 @@ function generateTags() {
       /* generate HTML of the link */
       //const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
       /* [NEW] Handlebars */
-      const linkHTMLData = { tag: tag, tag: tag };
+      const linkHTMLData = { id: tag, tag: tag };
       const linkHTML = templates.articleTags(linkHTMLData);
       console.log(linkHTML)
       /* add generated code to html variable */
